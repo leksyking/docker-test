@@ -8,11 +8,11 @@ import (
 )
 
 func main(){
-	http.Handlefunc("/", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, "Hello, %q", html.EscapeString(r.URL.Path))
 	})
-	http.Handlefunc("/hi", func(w http.ResponseWriter, r *http.Request){
+	http.HandleFunc("/hi", func(w http.ResponseWriter, r *http.Request){
 		fmt.Fprintf(w, "Hi")
 	})
-	log.Fatal (http.ListenAndServe(":8081", nil))
+	log.Fatal(http.ListenAndServe(":8081", nil))
 }
